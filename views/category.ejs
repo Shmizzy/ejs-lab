@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= sortedMenu[0].category  %></title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <% let categoryStr = sortedMenu[0].category  %>
+  <% let newCap = categoryStr[0].toUpperCase() + categoryStr.slice(1)  %>
+  <h1><%= newCap  %></h1>
+  <ul>
+    <% sortedMenu.forEach(element => { %>
+     <li><h1><%= element.name %></h1>
+      <p>Price: $<%= element.price %></p>
+      <p>Rating: <%= element.rating %></p>
+      <p>Details: <%= element.details %></p>
+    </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
